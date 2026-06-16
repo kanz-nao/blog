@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DART_SASS_VERSION: 1.100.0
-      GO_VERSION: 1.26.3
+      GO_VERSION: 1.26.4
       HUGO_VERSION: 0.163.0
       NODE_VERSION: 24.16.0
       TZ: Europe/Oslo
