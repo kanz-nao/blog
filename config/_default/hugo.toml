@@ -72,3 +72,19 @@ enableEmoji = true
   [caches.images]
     dir = ':cacheDir/images'
 
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    style = 'monokai'
+    tabWidth = 4
+    wrapperClass = 'code-highlight'
+

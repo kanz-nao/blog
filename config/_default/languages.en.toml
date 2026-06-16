@@ -2,7 +2,7 @@ disabled = false
 locale = "en"
 label = "English"
 weight = 1
-title = "thoughts.rand()"
+title = "crypt.crack()"
 
 [params]
   displayName = "EN"
@@ -19,8 +19,9 @@ title = "thoughts.rand()"
 #   email = "youremail@example.com"
 #   image = "img/blowfish_logo.png"
 #   imageQuality = 96
-  headline = "just an idiot who don't know when to stop"
-  bio = "hi. i'm currently unemployed, and sometimes my brain just comes up with things that i don't know how to refuse. my shitty social anxiety prevents me from making connections, so i try to solve things on my own. thank god now there are ais, but i just wish some of them use less water, noice and war."
+  headline = "just an idiot who doesn't know when to stop"
+  bio = "i don't understand the world these days..."
+  # bio = "hi. i'm currently unemployed, and sometimes my brain just comes up with things that i don't know how to refuse. my shitty social anxiety prevents me from making connections, so i try to solve things on my own. thank god now there are ais, but i just wish some of them use less water, noice and war."
 #   links = [
 #     { email = "mailto:hello@your_domain.com" },
 #     { link = "https://link-to-some-website.com/" },
