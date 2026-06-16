@@ -1,6 +1,6 @@
 +++
 date = '2026-06-15T03:12:08+08:00'
-draft = false
+draft = true
 title = 'Anatomy of an Addition'
 +++
 
