@@ -74,5 +74,5 @@ You've probably learnt about `add` circuit *(an adder)*, which looks like this:
   src="img/adder.png"
   default=true
   width=500
-  caption="A slice of an adder that computes `S = A + B`.<br/>**A<sub>i</sub>**, **B<sub>i</sub>**, **S<sub>i</sub>**, **C<sub>i</sub>** denotes the *i*-th bit of **A**, **B**, **S** and **C**."
+  caption="A slice of an adder that computes `S = A + B`.<br/>**A<sub>i</sub>**, **B<sub>i</sub>**, **S<sub>i</sub>**, **C<sub>i</sub>** denotes the *i*-th bit of **A**, **B**, **S** and **C**.<br/>**C** is the carry part resulted from constructing this adder."
 >}}
