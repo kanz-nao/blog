@@ -6,7 +6,7 @@ title = 'Anatomy of an Addition'
 
 {{< katex >}}
 
-## Introduction
+# Introduction
 
 When dabbling in the designs of some hash/PRNG/encrypt functions, I often notice a mix of bitwise operations and mod-2<sup>k</sup> additions in the formulas.
 
@@ -32,8 +32,7 @@ uint64_t next(void) {
     s[3] = rotl(s[3], 45);
     return result;
 }
-{{< /highlight >}} 
-<figcaption> xorshift256+ source code</figcaption>
+{{< /highlight >}} <figcaption> xorshift256+ [source code](https://prng.di.unimi.it/xoshiro256plusplus.c)</figcaption>
 
 {{< figure
   src="img/sha2.png"
@@ -46,7 +45,7 @@ uint64_t next(void) {
   src="img/salsa20.png"
   default=true
   width=500
-  caption="From Bernstein's Salsa20 [paper](https://cr.yp.to/snuffle/salsafamily-20071225.pdf)"
+  caption="from bernstein's salsa20 [paper](https://cr.yp.to/snuffle/salsafamily-20071225.pdf)"
 >}}
 
 I have a few speculations on why cryptographers love this combo:
@@ -59,6 +58,21 @@ These are the assumptions I often have in my mind, so whenever attempting to cra
 
 **But is it actually the case?**
 
-In 2024, the BRICS+ CTF was held, and one cryptography challenge caught my attention, attacking `xoshiro256++`. The requirements were simple: Given 1337 *consecutive* outputs produced by `xoshiro256++`, find the initial values from the list used to encrypt the flag. And I just love the solution the author came up with. However, this post isn't about discussing this particular CTF problem, but about the question I was inspired from the challenge:
+In 2024, the BRICS+ CTF was held, and one cryptography challenge caught my attention, attacking `xoshiro256++`. The requirements were simple: Given 1337 *consecutive* outputs produced by `xoshiro256++`, find the initial values from the list used to encrypt the flag. Needless to say, I was totally stumped during the CTF. When I read the solution, I realized that my assumptions were wrong. Turns out the author was able to construct linear relations from the formula, in \(\mathbb{F}_2\)!
 
-**How non-linear adding mod 2<sup>k</sup> really is?**
+Anyways, this post isn't about discussing this particular CTF problem, but about the question I was inspired from it:
+
+**How non-linear adding mod 2<sup>k</sup> really is in \(\mathbb{F}_2\)?**
+
+</br></br>
+
+# From circuit to formula
+
+You've probably learnt about `add` circuit *(an adder)*, which looks like this:
+
+{{< figure
+  src="img/adder.png"
+  default=true
+  width=500
+  caption="A slice of an adder that computes `S = A + B`.<br/>**A<sub>i</sub>**, **B<sub>i</sub>**, **S<sub>i</sub>**, **C<sub>i</sub>** denotes the *i*-th bit of **A**, **B**, **S** and **C**."
+>}}
